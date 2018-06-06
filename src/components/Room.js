@@ -6,11 +6,12 @@ import ChooseItem from './ChooseItem';
 export default class Room extends Component {
   static propTypes = {
     room: PropTypes.object,
-    onMove: PropTypes.func.isRequired
-  }
+    onMove: PropTypes.func.isRequired,
+    onPickup: PropTypes.func.isRequired
+  };
 
   render() {
-    const { room, onMove } = this.props;
+    const { room, onMove, onPickup } = this.props;
     const { title, description, image, doors, items, characters } = room;
 
     return (
@@ -20,14 +21,7 @@ export default class Room extends Component {
         {!!items.length && (
           <div>
             <h4>Items:</h4>
-            <ChooseItem items={items}/>
-            {/* <ul>
-              {items.map(item => (
-                <li key={item.key}>
-                  <button onClick={() => console.log(item.description)}></button>
-                </li>
-              ))}
-            </ul> */}
+            <ChooseItem items={items} onChoose={onPickup}/>
           </div>
         )}
         <h4>Doors:</h4>
