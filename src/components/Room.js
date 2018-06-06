@@ -13,11 +13,11 @@ export default class Room extends Component {
 
   render() {
     const { room, action, onMove, onPickup } = this.props;
-    const { title, description, image, doors, items, characters } = room;
+    const { name, description, image, doors, items, characters } = room;
 
     return (
       <section>
-        <h3>{title}</h3>
+        <h3>You are in the {name}</h3>
         <p>{description}</p>
         {!!items.length && (
           <div>
@@ -29,12 +29,13 @@ export default class Room extends Component {
         <ul>
           {Object.entries(doors).map(([direction, roomKey]) => {
             return <Door 
-              key={direction}
-              direction={direction}
-              onOpen={() => onMove(roomKey)}/>;
+            key={direction}
+            direction={direction}
+            onOpen={() => onMove(roomKey)}/>;
           })}
         </ul>
         {action && <p>{action}</p>}
+        <img src={image} alt={`image of ${name}`}/>
       </section>
     )
   }

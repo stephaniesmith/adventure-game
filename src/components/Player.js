@@ -10,14 +10,13 @@ export default class Player extends Component {
 
   render() {
     const { player, onUse } = this.props;
-    const { name, inventory } = player;
+    const { username, inventory } = player;
 
     return (
       <div>
-        <h2>{name}</h2>
-        <ul>
-          <ChooseItem items={inventory} onChoose={onUse}/>
-        </ul>
+        <h2>Hello, {username}</h2>
+        <h4>Inventory:</h4>
+        <ChooseItem items={inventory} onChoose={onUse}/>
       </div>
     );
   }
