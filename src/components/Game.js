@@ -19,6 +19,18 @@ export default class Game extends Component {
     }));
   };
 
+  handlePickup = item => {
+    this.setState(({ player, currentRoom }) => {
+      const index = currentRoom.items.indexOf(item);
+      if(index === -1) return;
+      currentRoom.items.splice(index, 1);
+
+      player.inventory.push(item);
+
+      return { player, currentRoom };
+    });
+  };
+
   render() {
     const { player, currentRoom } = this.state;
 
@@ -26,7 +38,8 @@ export default class Game extends Component {
       <main>
         <Player player={player}/>
         <Room room={currentRoom}
-          onMove={this.handleMove}/>
+          onMove={this.handleMove}
+          onPickup={this.handlePickup}/>
       </main>
     );
   }
