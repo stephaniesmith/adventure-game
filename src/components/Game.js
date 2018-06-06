@@ -7,7 +7,7 @@ export default class Game extends Component {
   state = {
     player: {
       action: '',
-      name: 'Player 1',
+      username: 'Alchemist',
       inventory: []
     },
     rooms,
