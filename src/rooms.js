@@ -1,8 +1,6 @@
-
-
 const classRoom = {
   name: 'Class Room',
-  image: 'picture of class room',
+  image: 'https://cdn-images-1.medium.com/max/1200/1*RD36bseIkEWK5GqmE2WKIQ.jpeg',
   description: 'A chilly room, lacking light and a good projector. At least it is quiet.',
   items: [
     {
@@ -23,7 +21,7 @@ const classRoom = {
 
 const mainRoom = {  
   name: 'Main Room',
-  image: 'picture of main room',
+  image: 'https://cdn-images-1.medium.com/max/1200/1*cGpsFwy7T_V0YA-gVujZDg.jpeg',
   description: 'A noisy room criss-crossed by treacherous cords. Filled with many a table',
   items: [
     {
@@ -45,7 +43,7 @@ const mainRoom = {
 
 const office = {
   name: 'Office',
-  image: 'picture of office room',
+  image: 'https://cdn-images-1.medium.com/max/1200/1*cGpsFwy7T_V0YA-gVujZDg.jpeg',
   description: 'A noisy room criss-crossed by treacherous cords. Filled with many a table',
   items: [
     {
@@ -66,7 +64,7 @@ const office = {
 
 const kitchen = {
   name: 'Kitchen',
-  image: 'picture of kitchen room',
+  image: 'https://i.pinimg.com/originals/4a/18/8f/4a188f021383b32902d28dcf40860fb5.jpg',
   description: 'A place full of snacks. Beware the running dishwasher. Be sure to clean your dishes',
   items: [
     {
