@@ -26,7 +26,7 @@ const mainRoom = {
   items: [
     {
       key: 'hdmi',
-      description: 'You found an hdmi cords!'
+      description: 'You found an hdmi cord!'
     },
   ],
   characters: [
@@ -37,7 +37,8 @@ const mainRoom = {
   ],
   doors: {
     s: 'kitchen',
-    e: 'office'
+    e: 'office',
+    n: 'classRoom'
   }   
 };
 
