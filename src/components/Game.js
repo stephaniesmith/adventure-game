@@ -7,7 +7,7 @@ export default class Game extends Component {
   state = {
     player: {
       name: 'Player 1',
-      inventory: ['cord']
+      inventory: []
     },
     rooms,
     currentRoom
@@ -26,9 +26,14 @@ export default class Game extends Component {
       currentRoom.items.splice(index, 1);
 
       player.inventory.push(item);
+      console.log('INV!!!', player.inventory);
 
       return { player, currentRoom };
     });
+  };
+
+  handleUse = item => {
+    console.log(item);
   };
 
   render() {
@@ -36,7 +41,8 @@ export default class Game extends Component {
 
     return (
       <main>
-        <Player player={player}/>
+        <Player player={player}
+          onUse={this.handleUse}/>
         <Room room={currentRoom}
           onMove={this.handleMove}
           onPickup={this.handlePickup}/>
