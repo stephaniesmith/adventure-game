@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Door from './Door';
+import ChooseItem from './ChooseItem';
 
 export default class Room extends Component {
   static propTypes = {
@@ -19,13 +20,14 @@ export default class Room extends Component {
         {!!items.length && (
           <div>
             <h4>Items:</h4>
-            <ul>
+            <ChooseItem items={items}/>
+            {/* <ul>
               {items.map(item => (
                 <li key={item.key}>
                   <button onClick={() => console.log(item.description)}></button>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
         )}
         <h4>Doors:</h4>
