@@ -4,11 +4,12 @@ import Door from './Door';
 
 export default class Room extends Component {
   static propTypes = {
-    room: PropTypes.object
+    room: PropTypes.object,
+    onMove: PropTypes.func.isRequired
   }
 
   render() {
-    const { room } = this.props;
+    const { room, onMove } = this.props;
     const { title, description, image, doors, items, characters } = room;
 
     return (
@@ -33,7 +34,7 @@ export default class Room extends Component {
             return <Door 
               key={direction}
               direction={direction}
-              />
+              onOpen={() => onMove(roomKey)}/>;
           })}
         </ul>
       </section>

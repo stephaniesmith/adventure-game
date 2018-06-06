@@ -8,10 +8,10 @@ const directions = {
   s: 'South'
 };
 
-export default function Door({ direction }) {
+export default function Door({ direction, onOpen }) {
   return (
     <li>
-      <button>
+      <button onClick={onOpen}>
         {directions[direction]}
       </button>
     </li>
@@ -19,5 +19,6 @@ export default function Door({ direction }) {
 }
 
 Door.propTypes = {
-  direction: PropTypes.string.isRequired
+  direction: PropTypes.string.isRequired,
+  onOpen: PropTypes.func.isRequired
 };

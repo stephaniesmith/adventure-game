@@ -13,13 +13,20 @@ export default class Game extends Component {
     currentRoom
   };
 
+  handleMove = roomKey => {
+    this.setState(prevState => ({
+      currentRoom: prevState.rooms[roomKey]
+    }));
+  };
+
   render() {
     const { player, currentRoom } = this.state;
 
     return (
       <main>
         <Player player={player}/>
-        <Room room={currentRoom}/>
+        <Room room={currentRoom}
+          onMove={this.handleMove}/>
       </main>
     );
   }
