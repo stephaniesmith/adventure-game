@@ -11,7 +11,22 @@ export default class Room extends Component {
     const { title, description, image, doors, items, characters } = room;
 
     return (
-      <img src={image} alt=""/>
+      <section>
+        <h3>{title}</h3>
+        <p>{description}</p>
+        {!!items.length && (
+          <div>
+            <h4>Items:</h4>
+            <ul>
+              {items.map(item => (
+                <li key={item.key}>
+                  <button onClick={() => console.log(item.description)}></button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </section>
     )
   }
 }
