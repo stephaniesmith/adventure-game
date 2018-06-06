@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Door from './Door';
 
 export default class Room extends Component {
   static propTypes = {
@@ -26,6 +27,15 @@ export default class Room extends Component {
             </ul>
           </div>
         )}
+        <h4>Doors:</h4>
+        <ul>
+          {Object.entries(doors).map(([direction, roomKey]) => {
+            return <Door 
+              key={direction}
+              direction={direction}
+              />
+          })}
+        </ul>
       </section>
     )
   }
