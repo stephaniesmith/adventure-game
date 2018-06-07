@@ -33,10 +33,10 @@ const classRoom = {
     if(item.cord) {
       this.items[0].cordsNeeded--;
       if(this.items[0].cordsNeeded === 0) {
-        return 'You have collected all the cords and the computer works! You can now code an adventure game.'
+        return 'You have collected all the cords and the computer works! You can now code an adventure game.';
       } else {
         const cords = this.items[0].cordsNeeded === 1 ? 'cord' : 'cords';
-        return `You still need ${this.items[0].cordsNeeded} ${cords}.`
+        return `You still need ${this.items[0].cordsNeeded} ${cords}.`;
       }
     }
   } 
@@ -87,7 +87,7 @@ const office = {
 
       delete adapter.prevent;
 
-      return 'Lewis is distracted by your offering.'
+      return 'Lewis is distracted by your offering.';
     }
   }
 };
